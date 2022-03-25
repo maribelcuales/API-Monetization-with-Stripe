@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/maribelcuales/API-Monetization-with-Stripe#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "stripe": "^8.211.0"
   }
