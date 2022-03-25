@@ -1,0 +1,24 @@
+{
+  "name": "api-monetization-with-stripe",
+  "version": "1.0.0",
+  "description": "Build an API with Express.js and Monetize it with Stripe Metered Billing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maribelcuales/API-Monetization-with-Stripe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maribelcuales/API-Monetization-with-Stripe/issues"
+  },
+  "homepage": "https://github.com/maribelcuales/API-Monetization-with-Stripe#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "stripe": "^8.211.0"
+  }
+}
