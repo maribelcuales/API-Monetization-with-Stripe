@@ -10,3 +10,12 @@ function generateAPIKey() {
     return { hashedAPIKey, apiKey };
   }
 }
+
+// Hash the API key
+function hashAPIKey(apiKey) {
+  const { createHash } = require("crypto");
+
+  const hashedAPIKey = creasteHash("sha256").update(apiKey).digest("hex");
+
+  return hashedAPIKey;
+}
