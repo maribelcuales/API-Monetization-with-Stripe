@@ -17,7 +17,11 @@ app.get("/api", async (req, res) => {
 });
 
 // Reverse mapping of stripe to API key
-// To model in preferred database
+// For modelling in preferred database
+// db will contain two tables or collections: 
+// customers - data about each customer's account and subscription 
+// apiKeys - a mapping to match an API key to a user 
+  
 const customers = {
   // stripeCustomerId: data
   stripeCustomerId: {
