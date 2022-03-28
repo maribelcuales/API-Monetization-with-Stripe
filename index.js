@@ -38,6 +38,7 @@ const apiKeys = {
 
 // POST http://localhost:8080/checkout
 // Create a Stripe Checkout Session to create a customer and subscribe them to a plan
+// Stripe Checkout allows redirect a user to a hosted webpage where they can securely enter their payment information.
 app.post("/checkout", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     mode: "subscription",
