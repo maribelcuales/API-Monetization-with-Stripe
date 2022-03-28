@@ -18,10 +18,10 @@ app.get("/api", async (req, res) => {
 
 // Reverse mapping of stripe to API key
 // For modelling in preferred database
-// db will contain two tables or collections: 
-// customers - data about each customer's account and subscription 
-// apiKeys - a mapping to match an API key to a user 
-  
+// db will contain two tables or collections:
+// customers - data about each customer's account and subscription
+// apiKeys - a mapping to match an API key to a user
+
 const customers = {
   // stripeCustomerId: data
   stripeCustomerId: {
@@ -35,3 +35,21 @@ const apiKeys = {
   // apiKey: customerData
   "123xyz": "stripeCustomerId",
 };
+
+// POST http://localhost:8080/checkout
+// Create a Stripe Checkout Session to create a customer and subscribe them to a plan
+app.post("/checkout", async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    mode: "subscription",
+    payment_method_types: ["card"],
+    line_items: [
+      {
+        price: "price_YOUR_PRICE_ID",
+      },
+    ],
+    success_url:
+      "http://localhost:5000/dashboard?session_id={CHECKOUT_SESSION_ID}",
+    cancel_url: "http://localhost:5000/error",
+  });
+  res.send(session);
+});
