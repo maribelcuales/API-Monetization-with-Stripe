@@ -45,7 +45,7 @@ app.post("/checkout", async (req, res) => {
     payment_method_types: ["card"],
     line_items: [
       {
-        price: "price_YOUR_PRICE_ID",
+        price: "price_1KiLEuDM88ZaOJ5kmVzTsKk8",
       },
     ],
     success_url:
